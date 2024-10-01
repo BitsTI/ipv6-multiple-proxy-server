@@ -2,7 +2,7 @@
 
 ### How to run:
 - Get the dockerfile
-- change the env lines of PROXY_USER, PROXY_PASS and START_PORT
+- change the env lines of PROXY_USER, PROXY_PASS, START_PORT and NET_INTERFACE.
 - run `docker build -t ipv6-proxy .` in the same folder of the dockerfile
 - After builds end, run:
 
