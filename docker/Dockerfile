@@ -19,5 +19,6 @@ RUN wget https://raw.githubusercontent.com/erickythierry/ipv6-multiple-proxy-ser
 ENV PROXY_USER=user
 ENV PROXY_PASS=pass
 ENV START_PORT=30000
+ENV NET_INTERFACE=
 
-CMD ["sh", "-c", "./start.sh -u $PROXY_USER -p $PROXY_PASS --start-port $START_PORT"]
+CMD ["sh", "-c", "./start.sh -u $PROXY_USER -p $PROXY_PASS --start-port $START_PORT --interface $NET_INTERFACE"]
