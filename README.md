@@ -17,7 +17,7 @@ This fork works with a fixed list of IPs previously attached to the server.
 - run: `docker build -t ipv6-proxy .` in the same folder of the Dockerfile
 - After builds end, run:
 
-`docker run --privileged -d --name ipv6-proxy --network host ipv6-proxy`
+`docker run --privileged -d --name ipv6-proxy --network host --restart always ipv6-proxy`
 
 - ⚠️ it is necessary for the container network to be "host" so that the IP addresses of the host machine are identified and used
 
