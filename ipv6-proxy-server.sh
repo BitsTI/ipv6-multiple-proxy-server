@@ -318,15 +318,29 @@ function generate_random_users_if_needed(){
   done;
 }
 
+# função nova que evita ipv6 link local
 function get_ipv6_addresses() {
     local ipv6_addresses
     ipv6_addresses=($(ip -6 addr | awk '/inet6 .* global/ { print $2 }' | cut -d'/' -f1))
 
     for ip in "${ipv6_addresses[@]}"; do
-        echo $ip >> "$random_ipv6_list_file"
-        # echo "echo $ip >> \"$random_ipv6_list_file\""
+        # Verifica se o endereço IPv6 é global (começa com 2xxx: ou 3xxx:)
+        if [[ $ip =~ ^2[0-9a-fA-F]{3}:.*$ || $ip =~ ^3[0-9a-fA-F]{3}:.*$ ]]; then
+            echo $ip >> "$random_ipv6_list_file"
+            # echo "echo $ip >> \"$random_ipv6_list_file\""
+        fi
     done
 }
+
+# function get_ipv6_addresses() {
+#     local ipv6_addresses
+#     ipv6_addresses=($(ip -6 addr | awk '/inet6 .* global/ { print $2 }' | cut -d'/' -f1))
+
+#     for ip in "${ipv6_addresses[@]}"; do
+#         echo $ip >> "$random_ipv6_list_file"
+#         # echo "echo $ip >> \"$random_ipv6_list_file\""
+#     done
+# }
 
 function create_startup_script(){
   delete_file_if_exists $random_ipv6_list_file;
