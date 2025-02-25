@@ -17,8 +17,8 @@ RUN wget https://raw.githubusercontent.com/erickythierry/ipv6-multiple-proxy-ser
 RUN wget https://raw.githubusercontent.com/erickythierry/ipv6-multiple-proxy-server/master/docker/start.sh && chmod +x start.sh
 
 # change user and pass
-ENV PROXY_USER=user
-ENV PROXY_PASS=pass
-ENV START_PORT=30000
+#ENV PROXY_USER=user
+#ENV PROXY_PASS=pass
+#ENV START_PORT=30000
 
-CMD ["sh", "-c", "./start.sh -u $PROXY_USER -p $PROXY_PASS --start-port $START_PORT -b 0.0.0.0"]
+CMD ["sh", "-c", "./start.sh -u $PROXY_USER -p $PROXY_PASS --start-port $START_PORT -b 0.0.0.0 --interface $NET_INTERFACE"]
