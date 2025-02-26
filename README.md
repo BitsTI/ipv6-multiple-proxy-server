@@ -17,7 +17,7 @@ This fork works with a fixed list of IPs previously attached to the server.
 docker run --privileged -d -e PROXY_USER=user \
 -e PROXY_PASS=pass -e START_PORT=30000 \
 -e NET_INTERFACE=Your-main-network-interface \
---name ipv6-proxy --network host --restart always ethie/ipv6-multiple-proxy-server:v1
+--name ipv6-proxy --network host --restart always ethie/ipv6-multiple-proxy-server:v2
 ```
 #### adjust the parameters below in the command above:
 - `PROXY_USER=` for proxy user 
@@ -81,7 +81,7 @@ Este fork funciona com uma lista fixa de IPs previamente anexados ao servidor.
 docker run --privileged -d -e PROXY_USER=user \
 -e PROXY_PASS=pass -e START_PORT=30000 \
 -e NET_INTERFACE=Your-main-network-interface \
---name ipv6-proxy --network host --restart always ethie/ipv6-multiple-proxy-server:v1
+--name ipv6-proxy --network host --restart always ethie/ipv6-multiple-proxy-server:v2
 ```
 #### Ajuste esses parametros abaixo no comando acima:
 - `PROXY_USER=` para o usuário do proxy
