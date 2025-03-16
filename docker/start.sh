@@ -398,7 +398,8 @@ function create_startup_script() {
     nserver 1.0.0.1
     maxconn 10000
     nscache 65536
-    timeouts 1 5 30 60 180 60 15 60
+    nscache6 65536
+    timeouts 1 5 30 60 60 60 15 60
     setgid 65535
     setuid 65535"
 
